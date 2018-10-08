@@ -7,10 +7,11 @@ github teamwork is for checking-in on a team. Are you trying to foster a collabo
 
 ## Commands (Limited Functionality)
 
-1 command in total.
+2 command in total.
 
 **Pull Requests**
 - `prcomments`    given a repository, github handle and date range: print out pull request comments by date, user. includes reactions (total count, :+1:, :-1:, :laughing:, :confused:, :heart: and :hooray:)
+- `repoevents`    given a repository, github handle and date range: print out repo events by date, user. Includes: CreateBranch, Push, PullRequestEvents, DeleteBranch 
 
 ## Installation
 
@@ -53,3 +54,10 @@ Run the following commands:
     example:
 
     ./run.sh prcomments -R <repo_name> -U <github.com_handle> -S <start_date> -E <end_date> > <start_date>-<handle>-<command>.csv
+
+    ./run.sh repoevents -R <repo_name> -U <github.com_handle> -S <start_date> -E <end_date> > <start_date>-<handle>-<command>.csv
+
+
+## Sample
+
+<img src="sample-repoevents.png" width="100">

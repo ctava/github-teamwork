@@ -52,12 +52,39 @@ type fetcher struct {
 //Fetcher public functions interfacing with github.com API
 type Fetcher interface {
 	FetchPullRequestComments(ctx context.Context, repositoryURL string) ([]PullComment, error)
+	FetchRepoEvents(ctx context.Context, repositoryURL string) ([]RepoEvent, error)
+	FetchTeamDiscussionComments(ctx context.Context, org, teamName string) ([]DiscussionComment, error)
 }
 
 // PullComment a struct for local, simplified representation of a PullRequestComment
 type PullComment struct {
 	Handle             string
 	ID                 int64
+	Body               string
+	ReactionTotalCount int
+	ReactionPlusOne    int
+	ReactionMinusOne   int
+	ReactionLaugh      int
+	ReactionConfused   int
+	ReactionHeart      int
+	ReactionHooray     int
+	CreatedAt          string
+}
+
+// RepoEvent a struct for local, simplified representation of an RepoEvent for a repository
+type RepoEvent struct {
+	Handle    string
+	Repo      string
+	Type      string
+	Payload   string
+	CreatedAt string
+}
+
+// DiscussionComment a struct for local, simplified representation of a DiscussionComment
+type DiscussionComment struct {
+	Handle             string
+	ID                 int64
+	Title              string
 	Body               string
 	ReactionTotalCount int
 	ReactionPlusOne    int
