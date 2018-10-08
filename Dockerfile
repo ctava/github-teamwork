@@ -42,11 +42,7 @@ RUN go get github.com/derekparker/delve/cmd/dlv
 #End: install delve
 
 #Begin: install dep
-RUN apt-get update && apt-get install -y unzip --no-install-recommends && \
-    apt-get autoremove -y && apt-get clean -y && \
-    wget -O dep.zip https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64.zip && \
-    echo '287b08291e14f1fae8ba44374b26a2b12eb941af3497ed0ca649253e21ba2f83 dep.zip' | sha256sum -c - && \
-    unzip -d /usr/bin dep.zip && rm dep.zip
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 #End: install dep
 
 #Begin: install github-teamwork
