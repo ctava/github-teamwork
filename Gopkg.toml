@@ -1,0 +1,15 @@
+[[constraint]]
+  name = "github.com/spf13/cobra"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/google/go-github"
+  branch = "master"
+
+[[constraint]]
+  name = "golang.org/x/oauth2"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/wcharczuk/go-chart"
+  branch = "master"
