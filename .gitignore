@@ -14,5 +14,8 @@
 .DS_Store
 
 vendor
-
 github-teamwork
+.env
+
+.csv
+.png

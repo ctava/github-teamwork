@@ -41,7 +41,7 @@ func NewFetcher(ctx context.Context, token string) Fetcher {
 	newClient := oauth2.NewClient(ctx, ts)
 	client := github.NewClient(newClient)
 	return &fetcher{
-		client: *client,
+		client: client,
 	}
 }
 

@@ -54,7 +54,7 @@ var repoEventsCmd = &cobra.Command{
 		end := getFlagString(cmd, "end")
 		startTime, sterr := time.Parse("2006-01-02", start)
 		if sterr != nil {
-			fmt.Println("an error occurred while parsing the end time. err:", sterr)
+			fmt.Println("an error occurred while parsing the start time. err:", sterr)
 			return
 		}
 		startYear := startTime.Year()
